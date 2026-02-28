@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { width: 220px; font-family: 'Segoe UI', sans-serif; padding: 15px; background: #1a1a1a; color: white; border: 2px solid #ff0000; }
+        .logo { font-size: 20px; font-weight: bold; color: #ff4d4d; margin-bottom: 10px; text-align: center; }
+        .site-option { display: flex; align-items: center; margin: 8px 0; font-size: 14px; }
+        input { margin-right: 10px; cursor: pointer; }
+        button { 
+            width: 100%; margin-top: 15px; padding: 10px; 
+            background: #ff0000; color: white; border: none; 
+            border-radius: 4px; cursor: pointer; font-weight: bold;
+        }
+        button:hover { background: #cc0000; }
+        #status { color: lime; margin-top: 10px; display: none; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="logo">🚨 ShameWall</div>
+    <div id="site-list">
+        <div class="site-option"><input type="checkbox" id="reddit.com"> Reddit</div>
+        <div class="site-option"><input type="checkbox" id="youtube.com"> YouTube</div>
+        <div class="site-option"><input type="checkbox" id="twitter.com"> Twitter/X</div>
+        <div class="site-option"><input type="checkbox" id="instagram.com"> Instagram</div>
+        <div class="site-option"><input type="checkbox" id="tiktok.com"> TikTok</div>
+        <div class="site-option"><input type="checkbox" id="facebook.com"> Facebook</div>
+    </div>
+    
+    <button id="save-btn">LOCK IN PREFERENCES</button>
+    <div id="status">SITES LOCKED!</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
