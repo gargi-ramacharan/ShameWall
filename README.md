@@ -5,8 +5,8 @@ Installation
 4. Click Load unpacked and select the folder containing these files.
 
 Setting Your Targets
-1. Click the Extension Icon (🚨) in your Chrome toolbar.
-2. Select the sites that trigger your procrastination (e.g., Reddit, YouTube, TikTok).
+1. Click the Extension Icon in your Chrome toolbar.
+2. Select the sites that trigger your procrastination (e.g., Reddit, Instagram, TikTok).
 3. Click LOCK IN PREFERENCES. Your settings are now saved to local storage.
 
 HAVE FUN LOCKING IN!
