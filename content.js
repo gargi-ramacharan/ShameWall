@@ -7,7 +7,6 @@ chrome.storage.local.get(['blockedSites'], (result) => {
 });
 
 async function activateShame() {
-    // Push notification logic removed from here
     try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
         const video = document.createElement('video');
