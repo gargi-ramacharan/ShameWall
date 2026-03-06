@@ -9,4 +9,4 @@ Setting Your Targets
 2. Select the sites that trigger your procrastination (e.g., Reddit, Instagram, TikTok).
 3. Click LOCK IN PREFERENCES. Your settings are now saved to local storage.
 
-HAVE FUN LOCKING IN! 😈😈😈
+HAVE FUN LOCKING IN! 
