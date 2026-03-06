@@ -76,3 +76,7 @@ document.getElementById('save-btn').addEventListener('click', () => {
         setTimeout(() => { status.style.display = 'none'; }, 2000);
     });
 });
+
+document.getElementById('analytics-btn').addEventListener('click', () => {
+    chrome.tabs.create({ url: 'dashboard.html' });
+});
