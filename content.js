@@ -7,12 +7,8 @@ chrome.storage.local.get(['blockedSites'], (result) => {
 });
 
 async function activateShame() {
-    const MAKE_URL = "https://hook.us2.make.com/5sucu31yl3lc12bglojq5m8vgxvzrx6v"; 
-    const site = window.location.hostname;
-
+    // Push notification logic removed from here
     try {
-        fetch(`${MAKE_URL}?website=${site}`, { method: 'GET', mode: 'no-cors' });
-
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
         const video = document.createElement('video');
         video.srcObject = stream;
