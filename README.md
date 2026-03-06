@@ -7,7 +7,7 @@ Installation
 Setting Your Websites
 1. Click the Extension Icon in your Chrome toolbar.
 2. Select the sites that trigger your procrastination OR add new websites that you frequently use. 
-3. Type in the website URL and click the '+' button on the right, and then you can toggle your new website. You can also delete any unwanted sites with the 'X' on the right.
+3. Type in the website URL and click the '+' button on the right, and then you can toggle your new website. You can also delete any unwanted sites with the 'X' on the right. *Note, you cannot add any invalid URLs.
 4. Click LOCK IN PREFERENCES. Your settings are now saved to local storage.
 
 HAVE FUN LOCKING IN!

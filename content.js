@@ -1,7 +1,5 @@
-// 1. Pull the saved list, OR use the defaults if it's a brand new install
 chrome.storage.local.get(['blockedSites'], (result) => {
     
-    // If memory is empty (undefined), use these. If the user saved an empty list ([]), it respects the empty list!
     const sites = result.blockedSites || ["instagram.com", "tiktok.com", "youtube.com"];
     
     const matchedSite = sites.find(site => window.location.href.includes(site));
@@ -12,7 +10,6 @@ chrome.storage.local.get(['blockedSites'], (result) => {
     }
 });
 
-// 2. The Data Snitch (Saves data for the Analytics Dashboard)
 function logInfraction(siteName) {
     chrome.storage.local.get(['shameData'], (result) => {
         const data = result.shameData || [];
@@ -20,9 +17,6 @@ function logInfraction(siteName) {
         chrome.storage.local.set({ shameData: data });
     });
 }
-
-// Keep your async function activateShame() and everything else exactly the same!}
-
 
 async function activateShame() {
     try {

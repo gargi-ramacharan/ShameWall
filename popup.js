@@ -38,22 +38,49 @@ function renderSites() {
 }
 
 chrome.storage.local.get(['allSites', 'blockedSites'], (result) => {
-    allSavedSites = result.allSites || DEFAULT_SITES;
-    currentlyBlocked = result.blockedSites || DEFAULT_SITES;
+    allSavedSites = result.allSites ? [...result.allSites] : [...DEFAULT_SITES];
+    currentlyBlocked = result.blockedSites ? [...result.blockedSites] : [...DEFAULT_SITES];
     renderSites();
 });
 
-document.getElementById('add-btn').addEventListener('click', () => {
+function showInvalidError() {
+    const errorMsg = document.getElementById('error-msg');
+    errorMsg.style.display = 'block';
+    setTimeout(() => { errorMsg.style.display = 'none'; }, 2000);
+}
+
+document.getElementById('add-btn').addEventListener('click', async () => {
     const inputEl = document.getElementById('new-site-input');
+    const addBtn = document.getElementById('add-btn');
     let newSite = inputEl.value.trim().toLowerCase();
     
+    if (newSite === "") return;
+
     newSite = newSite.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0];
 
-    if (newSite && !allSavedSites.includes(newSite)) {
-        allSavedSites.push(newSite);
-        currentlyBlocked.push(newSite); 
-        inputEl.value = ''; 
-        renderSites();
+    const isValidFormat = /^[a-z0-9\-]+\.[a-z]{2,}$/i.test(newSite);
+    if (!isValidFormat) {
+        showInvalidError();
+        return;
+    }
+
+    try {
+        addBtn.innerText = "..."; 
+        
+        await fetch(`https://${newSite}`, { mode: 'no-cors' });
+        
+        addBtn.innerText = "+";
+
+        if (!allSavedSites.includes(newSite)) {
+            allSavedSites.push(newSite);
+            currentlyBlocked.push(newSite); 
+            inputEl.value = ''; 
+            renderSites();
+        }
+
+    } catch (err) {
+        addBtn.innerText = "+";
+        showInvalidError();
     }
 });
 
@@ -71,9 +98,14 @@ document.getElementById('save-btn').addEventListener('click', () => {
         allSites: allSavedSites, 
         blockedSites: newBlockedSites 
     }, () => {
-        const status = document.getElementById('status');
-        status.style.display = 'block';
-        setTimeout(() => { status.style.display = 'none'; }, 2000);
+        const btn = document.getElementById('save-btn');
+        const originalText = btn.innerText;
+        btn.innerText = "LOCKED!";
+        btn.style.background = "#00cc00"; 
+        setTimeout(() => { 
+            btn.innerText = originalText; 
+            btn.style.background = "#ff0000";
+        }, 1500);
     });
 });
 
