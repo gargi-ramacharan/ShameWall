@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <style>
-        body { width: 220px; font-family: 'Segoe UI', sans-serif; padding: 15px; background: #1a1a1a; color: white; border: 2px solid #ff0000; }
-        .logo { font-size: 20px; font-weight: bold; color: #ff4d4d; margin-bottom: 10px; text-align: center; }
-        .site-option { display: flex; align-items: center; margin: 8px 0; font-size: 14px; }
-        input { margin-right: 10px; cursor: pointer; }
-        button { 
-            width: 100%; margin-top: 15px; padding: 10px; 
-            background: #ff0000; color: white; border: none; 
-            border-radius: 4px; cursor: pointer; font-weight: bold;
-        }
-        button:hover { background: #cc0000; }
+        body { width: 250px; font-family: 'Segoe UI', sans-serif; padding: 15px; background: #1a1a1a; color: white; border: 2px solid #ff0000; }
+        .logo { font-size: 20px; font-weight: bold; color: #ff4d4d; margin-bottom: 15px; text-align: center; text-shadow: 0 0 5px red; }
+        
+        /* adding sites */ 
+        .input-group { display: flex; margin-bottom: 15px; }
+        #new-site-input { flex-grow: 1; padding: 8px; background: #000; color: #fff; border: 1px solid #ff4d4d; border-radius: 4px 0 0 4px; outline: none; font-family: 'Courier New', monospace; }
+        #add-btn { width: auto; margin: 0; padding: 8px 12px; background: #ff4d4d; border-radius: 0 4px 4px 0; border: none; color: white; font-weight: bold; cursor: pointer; }
+        #add-btn:hover { background: #cc0000; }
+
+        /* user is able to input websites here */
+        .site-option { display: flex; align-items: center; justify-content: space-between; margin: 8px 0; font-size: 14px; background: #333; padding: 6px 10px; border-radius: 4px; }
+        .site-left { display: flex; align-items: center; }
+        input[type="checkbox"] { margin-right: 10px; cursor: pointer; accent-color: #ff0000; }
+        
+        /* delete from list */
+        .delete-btn { background: none; color: #ff4d4d; border: none; cursor: pointer; font-weight: bold; width: auto; margin: 0; padding: 0 5px; }
+        .delete-btn:hover { color: #ff0000; }
+
+        /* saving preferences */
+        #save-btn { width: 100%; margin-top: 15px; padding: 10px; background: #ff0000; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; letter-spacing: 1px; }
+        #save-btn:hover { background: #cc0000; }
         #status { color: lime; margin-top: 10px; display: none; font-weight: bold; text-align: center; }
     </style>
 </head>
 <body>
-    <div class="logo">🚨 ShameWall</div>
-    <div id="site-list">
-        <div class="site-option"><input type="checkbox" id="reddit.com"> Reddit</div>
-        <div class="site-option"><input type="checkbox" id="youtube.com"> YouTube</div>
-        <div class="site-option"><input type="checkbox" id="instagram.com"> Instagram</div>
-        <div class="site-option"><input type="checkbox" id="tiktok.com"> TikTok</div>
-        <div class="site-option"><input type="checkbox" id="facebook.com"> Facebook</div>
-        <div class="site-option"><input type="checkbox" id="chatgpt.com"> ChatGPT</div>
-        <div class="site-option"><input type="checkbox" id="gemini.google.com"> Gemini</div>
+    <div class="logo">🚨 ShameWall 🚨</div>
+    
+    <div class="input-group">
+        <input type="text" id="new-site-input" placeholder="input website url: e.g. netflix.com">
+        <button id="add-btn">+</button>
     </div>
+
+    <div id="site-list"></div>
     
     <button id="save-btn">LOCK IN PREFERENCES</button>
     <div id="status">SITES LOCKED!</div>

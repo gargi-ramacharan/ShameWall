@@ -33,7 +33,7 @@ function setupRedScreen() {
         <div id="cracks-container"></div>
         <div id="popup-container"></div> 
         <div id="safe-zone">
-            <h1 id="main-text">HOLY CHUZZ - LOCK IN!!</h1>
+            <h1 id="main-text">SHAME! LOCK BACK IN!!</h1>
             <div id="main-pic-container"></div>
             <div id="timer-box">
                 <p>FORCED REDIRECT IN:</p>
@@ -70,7 +70,6 @@ function startTheSpiral(video, stream) {
         timeLeft -= 1;
         const timer = document.getElementById('countdown-timer');
         if (timer) timer.innerText = timeLeft;
-        addCrack();
         if (timeLeft <= 0) {
             clearInterval(spawner);
             clearInterval(countdown);
@@ -82,23 +81,11 @@ function startTheSpiral(video, stream) {
 
 function spawnNewPicture(video) {
     const newFace = captureFrame(video);
-    const el = document.createElement('img');
-    el.src = newFace;
-    el.className = "pop-up-face";
-    el.style.left = (Math.random() * 80) + "vw";
-    el.style.top = (Math.random() * 80) + "vh";
-    el.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
-    document.getElementById('popup-container').appendChild(el);
-}
-
-function addCrack() {
-    const container = document.getElementById('cracks-container');
-    if (!container) return;
-    const crack = document.createElement('img');
-    crack.src = "https://freepngimg.com/thumb/broken_glass/3-2-broken-glass-png-pic.png"; 
-    crack.className = "dynamic-crack";
-    crack.style.left = (Math.random() * 100 - 20) + "vw";
-    crack.style.top = (Math.random() * 100 - 20) + "vh";
-    crack.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 2 + 1})`;
-    container.appendChild(crack);
+    const elem = document.createElement('img');
+    elem.src = newFace;
+    elem.className = "pop-up-face";
+    elem.style.left = (Math.random() * 80) + "vw";
+    elem.style.top = (Math.random() * 80) + "vh";
+    elem.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
+    document.getElementById('popup-container').appendChild(elem);
 }
