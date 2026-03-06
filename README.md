@@ -6,7 +6,8 @@ Installation
 
 Setting Your Targets
 1. Click the Extension Icon in your Chrome toolbar.
-2. Select the sites that trigger your procrastination (e.g., Reddit, Instagram, TikTok).
-3. Click LOCK IN PREFERENCES. Your settings are now saved to local storage.
+2. Select the sites that trigger your procrastination OR add new websites that you frequently use. 
+3. Type in the website URL and click the '+' button on the right, and then you can toggle your new website. You can also delete any unwanted sites with the 'X' on the right.
+4. Click LOCK IN PREFERENCES. Your settings are now saved to local storage.
 
-HAVE FUN LOCKING IN! 
+HAVE FUN LOCKING IN!
